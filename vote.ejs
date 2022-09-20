@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>고민 멈춰! - Vote Participation</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Data for chart -->
+    <!-- options & num -->
+    <input type="hidden" id="option1" value="<%= datas.option1 %>">
+    <input type="hidden" id="option2" value="<%= datas.option2 %>">
+
+    <input type="hidden" id="option1Num" value="<%= datas.option1Num %>">
+    <input type="hidden" id="option2Num" value="<%= datas.option2Num %>">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/main">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">고민 멈춰!</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/main">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>메인</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                카테고리
+            </div>
+
+            <!-- Nav Item -->
+            <li class="nav-item">
+                <a class="nav-link" href="/food">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>음식</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/relationship">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>연애</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/fashion">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>패션</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/free">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>자유</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                기타
+            </div>
+
+            <!-- Nav Item -->
+            <li class="nav-item">
+                <a class="nav-link" href="/announcement">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>공지</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">사용자</span>
+                                <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    프로필
+                                </a>
+                                <a class="dropdown-item" href="/myvotelist">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    나의 투표목록
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    로그아웃
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">투표 참여</h1>
+                    </div>
+
+                    <!-- Project Card Example -->
+                    <div class="card shadow mb-4">
+            
+                        <div class="card-header py-3">
+                            <h2 class="h4 mb-0 font-weight-bold text-primary">
+                                <%= datas.title %>
+                            </h2>
+                        </div>
+
+                        <div class="card-body">
+
+                            <p style="text-align:left">
+                                작성자: <%= datas.author %>
+                                    <br>
+                                    작성일: <%= datas.postDate %>
+                                        <br>
+                                        조회수: <%= datas.views %>
+                            </p>
+
+                            <p style="text-align:center">
+                                <%= datas.body %>
+                            </p>
+
+                            <%if(typeof error !== "undefined"){%>
+                            <div class="text-center">
+                                <p style="color:red;">
+                                    <a class=" btn btn-warning btn-circle btn-sm">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </a>
+                                    <%= error%>
+                                </p>
+                            </div>
+                            <%}%>
+
+                            <div class="text-center">
+                                <!-- Button -->
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="text-center card mb-4 py-3 border-bottom-success">
+                                            <div class="card-body">
+                                                <%= datas.option1 %>
+                                                <br><br>
+                                                <a href="/update1/<%= datas._id %>"
+                                                    class="btn btn-success btn-circle">
+                                                    <i class="fas fa-check"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="card mb-4 py-3 border-bottom-success">
+                                            <div class="card-body">
+                                                <%= datas.option2 %>
+                                                <br><br>
+                                                <a href="/update2/<%= datas._id %>"
+                                                    class="btn btn-success btn-circle">
+                                                    <i class="fas fa-check"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Bar Chart -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">투표 결과</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-bar">
+                                            <canvas id="barChartBinary"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/result/<%= datas._id %>">더 자세한 결과 확인하러가기 &rarr;</a>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- End of Main Content -->
+            </div>
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 고민멈춰! 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+    <script src="/chart/barChartBinary.js"></script>
+</body>
+
+</html>
